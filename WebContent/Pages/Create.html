@@ -12,39 +12,39 @@ Percentage: <input type="text" placeholder="Percentage" ng-model="percentage"/><
 </form>
 </div> -->
 <div class="container" style="float:left; width:50%; margin-left:150px;">  
- <form id="EmploymentApplication" action="" method="post">
+ <form id="EmploymentApplication" action="" method="post" ng-submit="">
     <h3>EMPLOYEE FORM</h3>
   
     <fieldset>
-      <input placeholder="First Name" ng-model="firstName" type="text" tabindex="1"  required autofocus>
+      <input placeholder="First Name" ng-model="Employee.firstName" type="text" tabindex="1"  required autofocus>
     </fieldset>
     <fieldset>
-      <input placeholder="Last Name" ng-model="lastName" type="text" tabindex="2"  required>
+      <input placeholder="Last Name" ng-model="Employee.lastName" type="text" tabindex="2"  required>
     </fieldset>
     <fieldset>
      <fieldset>
-      <input placeholder="Employee ID" ng-model="empId" type="text" tabindex="3" required>
+      <input placeholder="Employee ID" ng-model="Employee.empId" type="text" tabindex="3" required>
     </fieldset>
     <fieldset>
-      <input placeholder="Date of Birth" ng-model="DOB" type="date" tabindex="4" required>
+      <input placeholder="Date of Birth" ng-model="Employee.DOB" type="date" tabindex="4" required>
     </fieldset>
     <fieldset>
-      <input placeholder="Mobile No" ng-model="contactNo" type="tel" tabindex="5" maxlength="10" required>
+      <input placeholder="Mobile No" ng-model="Employee.contactNo" type="tel" tabindex="5" maxlength="10" required>
     </fieldset>
     <fieldset>
-      <input placeholder="Position you are applying for" ng-model="position" type="text" tabindex="6" required>
+      <input placeholder="Position you are applying for" ng-model="Employee.position" type="text" tabindex="6" required>
     </fieldset>
      <fieldset>
-      <input placeholder="Highest Certificate Name" ng-model="certificateName" type="text" tabindex="7" required>
+      <input placeholder="Highest Certificate Name" ng-model="Employee.certificateName" type="text" tabindex="7" required>
     </fieldset>
     <fieldset>
-      <input placeholder="Percentage " ng-model="percentage" type="text" tabindex="8" maxlength="2" required>
+      <input placeholder="Percentage " ng-model="Employee.percentage" type="text" tabindex="8" maxlength="2" required>
     </fieldset>
     <fieldset>
-      <textarea placeholder="Address" ng-model="address" tabindex="9" required></textarea>
+      <textarea placeholder="Address" ng-model="Employee.address" tabindex="9" required></textarea>
     </fieldset>
     <fieldset>
-      <button name="submit" type="submit" class="submit" id="contact-submit" data-submit="...Sending">Add</button>
+      <button name="submit" type="submit" class="submit" id="contact-submit">Add</button>
     </fieldset>
   </form>
 </div>
