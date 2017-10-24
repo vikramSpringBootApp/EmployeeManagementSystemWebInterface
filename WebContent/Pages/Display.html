@@ -1,0 +1,33 @@
+<div>
+	 <table>
+	<thead>
+		<tr>
+			<!-- <th>EmpId</th> -->
+			<th>FirstName</th>
+			<!-- <th>LastName</th>
+			<th>Address</th>
+			<th>ContactNo</th>
+			<th>CertificateName</th>
+			<th>Position</th>
+			<th>Percentage</th>
+			<th>DOB</th> -->
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="employee in displayCtrl.employees">
+			
+			<td><a href="#/employee/{{employee.empId}}">{{employee.firstName}}</a></td>
+			<!-- <td>{{employee.empId}}</td>
+			<td>{{employee.lastName}}</td>
+			<td>{{employee.address}}</td>
+			<td>{{employee.contactNo}}</td>
+			<td>{{employee.certificateName}}</td>
+			<td>{{employee.position}}</td>
+			<td>{{employee.percentage}}</td>
+			<td>{{employee.dob}}</td> -->
+		</tr>
+	</tbody>
+</table>
+</div> 
+
+<button ng-click="displayCtrl.reload()">Reload Page</button>

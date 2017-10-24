@@ -1,0 +1,50 @@
+<!-- <div>
+<form action="" method="post">
+FirstName : <input type="text" placeholder="FirstName" ng-model="firstname"/><br/>
+LastName : <input type="text" placeholder="LastName" ng-model="lastname"/><br/>
+Date Of Birth: <input type="text" placeholder="Date Of Birth" ng-model="dob"/><br/>
+Address : <input type="text" placeholder="Address" ng-model="address"/><br/>
+ContactNo : <input type="text" placeholder="ContactNo" ng-model="contactno"/><br/>
+Certification Name : <input type="text" placeholder="Certification Name" ng-model="certificationname"/><br/>
+Position : <input type="text" placeholder="Position" ng-model="position"/><br/>
+Percentage: <input type="text" placeholder="Percentage" ng-model="percentage"/><br/>
+<input type="submit" value="Create"/>
+</form>
+</div> -->
+<div class="container" style="float:left; width:50%; margin-left:150px;">  
+ <form id="EmploymentApplication" action="" method="post">
+    <h3>EMPLOYEE FORM</h3>
+  
+    <fieldset>
+      <input placeholder="First Name" ng-model="firstName" type="text" tabindex="1"  required autofocus>
+    </fieldset>
+    <fieldset>
+      <input placeholder="Last Name" ng-model="lastName" type="text" tabindex="2"  required>
+    </fieldset>
+    <fieldset>
+     <fieldset>
+      <input placeholder="Employee ID" ng-model="empId" type="text" tabindex="3" required>
+    </fieldset>
+    <fieldset>
+      <input placeholder="Date of Birth" ng-model="DOB" type="date" tabindex="4" required>
+    </fieldset>
+    <fieldset>
+      <input placeholder="Mobile No" ng-model="contactNo" type="tel" tabindex="5" maxlength="10" required>
+    </fieldset>
+    <fieldset>
+      <input placeholder="Position you are applying for" ng-model="position" type="text" tabindex="6" required>
+    </fieldset>
+     <fieldset>
+      <input placeholder="Highest Certificate Name" ng-model="certificateName" type="text" tabindex="7" required>
+    </fieldset>
+    <fieldset>
+      <input placeholder="Percentage " ng-model="percentage" type="text" tabindex="8" maxlength="2" required>
+    </fieldset>
+    <fieldset>
+      <textarea placeholder="Address" ng-model="address" tabindex="9" required></textarea>
+    </fieldset>
+    <fieldset>
+      <button name="submit" type="submit" class="submit" id="contact-submit" data-submit="...Sending">Add</button>
+    </fieldset>
+  </form>
+</div>
