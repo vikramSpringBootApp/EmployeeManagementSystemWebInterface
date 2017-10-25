@@ -39,7 +39,11 @@ var app = angular.module("Demo", ["ngRoute"])
 					
 				})
 				.controller("createController", function($scope) {
+					$scope.message = "in createcontroller";
 					
+					$scope.addEmployee = function(){
+						alert("called");
+					}
 				})
 		        .controller("displayController", function(displayEmployeeLists,$route,$scope) {
 					var vm = this;
