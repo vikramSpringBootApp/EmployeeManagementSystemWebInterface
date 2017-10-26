@@ -1,6 +1,10 @@
 
 var app = angular.module("Demo", ["ngRoute"])
-				.config(function($routeProvider){
+				.config(function($routeProvider,$httpProvider){
+					/*$httpProvider.defaults.headers.common = {};
+					  $httpProvider.defaults.headers.post = {};
+					  $httpProvider.defaults.headers.put = {};
+					  $httpProvider.defaults.headers.patch = {};*/
 					$routeProvider
 					.when("/home", {
 						templateUrl: "Pages/Home.html",
@@ -34,16 +38,74 @@ var app = angular.module("Demo", ["ngRoute"])
 					.otherwise({
 						redirectTo : "/home"
 					})
-				}).controller("homeController", function($scope) {
+				})
+				/*.factory("employeeService", [ '$http', function($http){
+					var fac = {};
+					
+					fac.AddEmployeeToDB = function(Employee){
+						$http.post("http://localhost:8060/employee/HomePage/createEmployee",Employee).success(function(response) {
+							alert(response.status);
+						})
+						
+						$http({
+						    method : "POST",
+						    url : "http://localhost:8060/employee/HomePage/createEmployee",
+						    data : Employee,
+						    headers : {
+						        'Content-Type' : 'application/json'
+						    }
+						}).then(function(response){
+							alert(response.status);
+						});
+					}
+					return fac;
+				}])			*/	
+				.controller("homeController", function($scope) {
 					$scope.message = "Employee Management System Home Page";
 					
 				})
-				.controller("createController", function($scope) {
+				.controller("createController", function($scope,$http) {
 					$scope.message = "in createcontroller";
 					
 					$scope.addEmployee = function(){
-						alert("called");
+						
+						/*fac.AddEmployeeToDB = function(){
+							$http.post("http://localhost:8060/employee/HomePage/createEmployee",$scope.Employee).success(function(response) {
+								alert(response.status);
+							})
+						}*/
+						var employee1 = {
+								address: "Hinjiwadi Chowk",
+								certificateName: "AWS",
+								contactNo: "9763259803",
+								dob: "31-08-1993",
+								empId: 132,
+								firstName: "Ambuj",
+								lastName: "Dubey",
+								percentage: 96,
+								position: "software Engg"
+							};
+
+						$http({
+						    method : "POST",
+						    url : "http://localhost:8060/employee/HomePage/createEmployee",
+						    data : angular.toJson($scope.Employee),
+						    headers : {
+						        'Content-Type' : 'application/json'
+						    }
+						}).then(function(response){
+							alert(response.status);
+						});
+						
+						
+
+						/*var objJson = angular.toJson($scope.Employee);
+						//alert(objJson);
+						employeeService.AddEmployeeToDB(employee1);*/
 					}
+					
+					
+					
 				})
 		        .controller("displayController", function(displayEmployeeLists,$route,$scope) {
 					var vm = this;
@@ -91,5 +153,15 @@ var app = angular.module("Demo", ["ngRoute"])
 				.controller("searchController", function($scope) {
 					$scope.message1 = "Search & Update";
 				});
+				/*.factory("employeeService", [ '$http', function($http){
+					var fac = {};
+					
+					fac.AddEmployeeToDB = function(Employee){
+						$http.post("http://localhost:8060/employee/HomePage/createEmployee",Employee).success(function(response) {
+							alert(response.status);
+						})
+					}
+					
+				}])*/
 				
 			
